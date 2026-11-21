@@ -1,0 +1,6 @@
+{
+  "name": "PivotPilot",
+  "description": "AI career pivot coach with skill-gap analysis, adaptive weekly roadmaps, portfolio projects, mock interviews, and application analytics.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

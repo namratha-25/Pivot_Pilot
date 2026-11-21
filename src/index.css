@@ -1,0 +1,102 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Wix Madefor Display", sans-serif;
+  --font-headline: "Wix Madefor Display", sans-serif;
+  --font-body: "Instrument Sans", sans-serif;
+  --font-mono: "Source Code Pro", monospace;
+
+  --color-canvas: var(--pp-canvas);
+  --color-surface: var(--pp-surface);
+  --color-surface-low: var(--pp-surface-low);
+  --color-surface-mid: var(--pp-surface-mid);
+  --color-surface-high: var(--pp-surface-high);
+  --color-ink: var(--pp-ink);
+  --color-ink-muted: var(--pp-ink-muted);
+  --color-ink-subtle: var(--pp-ink-subtle);
+  --color-line: var(--pp-line);
+  --color-line-strong: var(--pp-line-strong);
+  --color-primary: var(--pp-primary);
+  --color-on-primary: var(--pp-on-primary);
+  --color-primary-deep: var(--pp-primary-deep);
+  --color-blush-tint: var(--pp-blush-tint);
+  --color-blush-soft: var(--pp-blush-soft);
+  --color-blush-mid: var(--pp-blush-mid);
+  --color-danger: var(--pp-danger);
+  --color-danger-bg: var(--pp-danger-bg);
+}
+
+:root {
+  --pp-canvas: #F3F3F8;
+  --pp-surface: #FFFFFF;
+  --pp-surface-low: #F8F8FB;
+  --pp-surface-mid: #EDEEF2;
+  --pp-surface-high: #E7E8EC;
+  --pp-ink: #191C1F;
+  --pp-ink-muted: #5C5E62;
+  --pp-ink-subtle: #75777B;
+  --pp-line: #E1E2E7;
+  --pp-line-strong: #C5C6CB;
+  --pp-primary: #80264D;
+  --pp-on-primary: #FFFFFF;
+  --pp-primary-deep: #610A35;
+  --pp-blush-tint: #FFECF0;
+  --pp-blush-soft: #FFD9E3;
+  --pp-blush-mid: #FFB0CA;
+  --pp-danger: #BA1A1A;
+  --pp-danger-bg: #FFDAD6;
+}
+
+.dark {
+  --pp-canvas: #111417;
+  --pp-surface: #191C1F;
+  --pp-surface-low: #1D2023;
+  --pp-surface-mid: #282A2E;
+  --pp-surface-high: #323538;
+  --pp-ink: #E1E2E7;
+  --pp-ink-muted: #AAABAF;
+  --pp-ink-subtle: #8F9195;
+  --pp-line: #34373B;
+  --pp-line-strong: #4B4E53;
+  --pp-primary: #FFB0CA;
+  --pp-on-primary: #610A35;
+  --pp-primary-deep: #FFCEDC;
+  --pp-blush-tint: #2D1821;
+  --pp-blush-soft: #4B2432;
+  --pp-blush-mid: #9E3E65;
+  --pp-danger: #FFB4AB;
+  --pp-danger-bg: #53171A;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+    color: var(--pp-ink);
+    background-color: var(--pp-canvas);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pp-line-strong);
+  border-radius: 9999px;
+}

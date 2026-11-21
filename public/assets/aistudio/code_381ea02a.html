@@ -1,0 +1,387 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week-by-Week Roadmap — PivotPilot</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'pink-tint': '#FFECF0',
+        'pink-soft': '#FFD9E3',
+        'pink-mid': '#FFB0CA',
+        'ash-50': '#F0F0F5',
+        'ash-100': '#E1E2E7',
+        'ash-200': '#C5C6CB',
+        'ash-400': '#8F9195',
+        'ash-500': '#75777B',
+        'ash-600': '#5C5E62',
+        'ash-900': '#191C1F',
+        'light-primary': '#80264D',
+        'light-on-primary': '#FFFFFF',
+        'light-primary-container': '#FFD9E3',
+        'light-on-primary-container': '#610A35',
+        'light-secondary': '#805160',
+        'light-on-secondary': '#FFFFFF',
+        'light-secondary-container': '#FEC1D4',
+        'light-on-secondary-container': '#4B2432',
+        'light-error': '#BA1A1A',
+        'light-on-error': '#FFFFFF',
+        'light-error-container': '#FFDAD6',
+        'light-on-error-container': '#93000A',
+        'light-background': '#F3F3F8',
+        'light-on-background': '#191C1F',
+        'light-surface': '#F3F3F8',
+        'light-surface-dim': '#E1E2E7',
+        'light-surface-bright': '#FFFFFF',
+        'light-surface-container-lowest': '#FFFFFF',
+        'light-surface-container-low': '#F8F8FB',
+        'light-surface-container': '#EDEEF2',
+        'light-surface-container-high': '#E7E8EC',
+        'light-surface-container-highest': '#E1E2E7',
+        'light-on-surface': '#191C1F',
+        'light-surface-variant': '#E7E8EC',
+        'light-on-surface-variant': '#5C5E62',
+        'light-outline': '#8F9195',
+        'light-outline-variant': '#E1E2E7',
+        'light-inverse-surface': '#2E3134',
+        'light-inverse-on-surface': '#F0F0F5',
+        'light-inverse-primary': '#FFB0CA',
+        'light-shadow': '#191C1F',
+        'light-scrim': '#000000',
+        'dark-primary': '#FFB0CA',
+        'dark-on-primary': '#610A35',
+        'dark-primary-container': '#9E3E65',
+        'dark-on-primary-container': '#FFCEDC',
+        'dark-secondary': '#F2B6C8',
+        'dark-on-secondary': '#4B2432',
+        'dark-secondary-container': '#683C4B',
+        'dark-on-secondary-container': '#E3A8BA',
+        'dark-error': '#FFB4AB',
+        'dark-on-error': '#690005',
+        'dark-error-container': '#93000A',
+        'dark-on-error-container': '#FFDAD6',
+        'dark-background': '#111417',
+        'dark-on-background': '#E1E2E7',
+        'dark-surface': '#111417',
+        'dark-surface-dim': '#111417',
+        'dark-surface-bright': '#37393D',
+        'dark-surface-container-lowest': '#0C0E11',
+        'dark-surface-container-low': '#191C1F',
+        'dark-surface-container': '#1D2023',
+        'dark-surface-container-high': '#282A2E',
+        'dark-surface-container-highest': '#323538',
+        'dark-on-surface': '#E1E2E7',
+        'dark-surface-variant': '#2E3134',
+        'dark-on-surface-variant': '#AAABAF',
+        'dark-outline': '#8F9195',
+        'dark-outline-variant': '#44474B',
+        'dark-inverse-surface': '#E1E2E7',
+        'dark-inverse-on-surface': '#2E3134',
+        'dark-inverse-primary': '#9C3C63',
+        'dark-shadow': '#000000',
+        'dark-scrim': '#000000',
+      },
+      borderRadius: {
+        'sm': '8px',
+        'DEFAULT': '12px',
+        'md': '16px',
+        'lg': '20px',
+        'xl': '24px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '40px',
+        'page-margin': '24px',
+      },
+      fontFamily: {
+        'display': ['"Wix Madefor Display"', 'sans-serif'],
+        'headline': ['"Wix Madefor Display"', 'sans-serif'],
+        'title': ['"Instrument Sans"', 'sans-serif'],
+        'body': ['"Instrument Sans"', 'sans-serif'],
+        'label': ['"Instrument Sans"', 'sans-serif'],
+        'mono': ['"Source Code Pro"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['40px', { lineHeight: '48px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'display-lg-mobile': ['28px', { lineHeight: '34px', letterSpacing: '-0.3px', fontWeight: '700' }],
+        'headline-lg': ['28px', { lineHeight: '36px', letterSpacing: '-0.3px', fontWeight: '600' }],
+        'headline-md': ['22px', { lineHeight: '28px', letterSpacing: '-0.2px', fontWeight: '600' }],
+        'title-lg': ['18px', { lineHeight: '26px', letterSpacing: '-0.1px', fontWeight: '600' }],
+        'title-md': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '500' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.1px', fontWeight: '500' }],
+        'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.2px', fontWeight: '500' }],
+        'mono-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '500' }],
+        'mono-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '240ms',
+        'surface-exit': '160ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>.material-symbols-outlined { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }</style>
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased">
+  <div class="min-h-[1024px] flex flex-col lg:flex-row" data-stitch-vh="min-h-[1024px]===min-h-screen">
+    <!-- Mobile Top Header -->
+    <header class="lg:hidden sticky top-0 z-30 bg-light-surface-container-lowest border-b border-light-outline-variant px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded bg-pink-soft text-light-primary flex items-center justify-center">
+          <span class="material-symbols-outlined text-title-md" style="font-variation-settings: &#39;FILL&#39; 1;" aria-hidden="true">explore</span>
+        </div>
+        <span class="font-headline text-title-md text-light-on-surface" data-design-text-token="title-md">PivotPilot</span>
+      </div>
+      <button id="mobile-menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-light-surface-container text-light-on-surface hover:bg-pink-tint hover:text-light-primary transition-colors duration-state-change">
+        <span class="material-symbols-outlined text-title-lg" aria-hidden="true">menu</span>
+      </button>
+    </header>
+
+    <div id="sidebar-backdrop" class="hidden fixed inset-0 z-40 bg-light-scrim/30 lg:hidden"></div>
+
+    <!-- Left Sidebar Navigation -->
+    <aside id="app-sidebar" class="hidden lg:flex fixed lg:static inset-y-0 left-0 z-50 w-64 shrink-0 min-h-[1024px] bg-light-surface-container-lowest border-r border-light-outline-variant flex-col justify-between p-5" data-stitch-vh="min-h-[1024px]===min-h-screen">
+      <div class="flex flex-col gap-6">
+        <div class="flex items-center justify-between gap-2">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded bg-pink-soft text-light-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-title-lg" style="font-variation-settings: &#39;FILL&#39; 1;" aria-hidden="true">explore</span>
+            </div>
+            <span class="font-headline text-title-lg text-light-on-surface" data-design-text-token="title-lg">PivotPilot</span>
+          </div>
+          <button id="mobile-close-btn" type="button" aria-label="Close navigation menu" class="lg:hidden inline-flex items-center justify-center w-8 h-8 rounded-full text-light-on-surface-variant hover:bg-light-surface-container">
+            <span class="material-symbols-outlined text-title-md" aria-hidden="true">close</span>
+          </button>
+        </div>
+
+        <div class="rounded bg-light-surface-container-low border border-light-outline-variant px-3.5 py-2.5 flex flex-col gap-0.5">
+          <span class="font-label text-label-sm text-light-on-surface-variant" data-design-text-token="label-sm">Target Role</span>
+          <span class="font-label text-label-md text-light-on-surface" data-design-text-token="label-md">Product Manager · Wk 3/8</span>
+        </div>
+
+        <nav aria-label="Primary Navigation" class="flex flex-col gap-1">
+          <a href="../dashboard/Dashboard.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded text-light-on-surface-variant hover:bg-light-surface-container hover:text-light-on-surface font-label text-label-lg transition-colors duration-state-change">
+            <span class="material-symbols-outlined text-title-lg" aria-hidden="true">dashboard</span>
+            <span data-design-text-token="label-lg">Dashboard</span>
+          </a>
+          <a href="../skill-gap-map/SkillGapMap.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded text-light-on-surface-variant hover:bg-light-surface-container hover:text-light-on-surface font-label text-label-lg transition-colors duration-state-change">
+            <span class="material-symbols-outlined text-title-lg" aria-hidden="true">grid_view</span>
+            <span data-design-text-token="label-lg">Skill-Gap Map</span>
+          </a>
+          <a href="../roadmap/Roadmap.html" aria-current="page" class="flex items-center gap-3 px-3.5 py-2.5 rounded bg-pink-tint text-light-primary font-label text-label-lg">
+            <span class="material-symbols-outlined text-title-lg" style="font-variation-settings: &#39;FILL&#39; 1;" aria-hidden="true">route</span>
+            <span data-design-text-token="label-lg">Roadmap</span>
+          </a>
+          <a href="../projects/Projects.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded text-light-on-surface-variant hover:bg-light-surface-container hover:text-light-on-surface font-label text-label-lg transition-colors duration-state-change">
+            <span class="material-symbols-outlined text-title-lg" aria-hidden="true">folder_special</span>
+            <span data-design-text-token="label-lg">Projects</span>
+          </a>
+          <a href="../mock-interview/MockInterview.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded text-light-on-surface-variant hover:bg-light-surface-container hover:text-light-on-surface font-label text-label-lg transition-colors duration-state-change">
+            <span class="material-symbols-outlined text-title-lg" aria-hidden="true">mic</span>
+            <span data-design-text-token="label-lg">Mock Interview</span>
+          </a>
+          <a href="../application-tracker/ApplicationTracker.html" class="flex items-center justify-between gap-3 px-3.5 py-2.5 rounded text-light-on-surface-variant hover:bg-light-surface-container hover:text-light-on-surface font-label text-label-lg transition-colors duration-state-change">
+            <span class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-title-lg" aria-hidden="true">work_history</span>
+              <span data-design-text-token="label-lg">Applications</span>
+            </span>
+            <span data-component-id="badge-numeric" data-component-type="badge" data-component-variant="numeric" class="inline-flex items-center justify-center min-w-5 h-5 px-1.5 rounded-full bg-pink-soft text-light-on-primary-container font-mono text-label-sm tabular-nums">6</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="pt-4 border-t border-light-outline-variant flex flex-col gap-3">
+        <a href="../onboarding/Onboarding.html" class="flex items-center gap-2.5 px-3 py-2 rounded text-light-on-surface-variant hover:bg-light-surface-container text-label-md font-label transition-colors duration-state-change">
+          <span class="material-symbols-outlined text-title-md" aria-hidden="true">tune</span>
+          <span data-design-text-token="label-md">Pivot Settings</span>
+        </a>
+        <div class="flex items-center gap-3 px-2">
+          <div class="w-9 h-9 rounded-full bg-pink-soft text-light-on-primary-container flex items-center justify-center font-label text-label-md shrink-0">ML</div>
+          <div class="flex flex-col">
+            <span class="font-label text-label-md text-light-on-surface" data-design-text-token="label-md">Maya Lin</span>
+            <span class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">10 hrs / week</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 min-w-0">
+      <div class="max-w-5xl mx-auto px-6 py-8 flex flex-col gap-8">
+        <header class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex flex-col gap-1">
+            <h1 class="font-headline text-headline-lg text-light-on-surface" data-design-text-token="headline-lg">Week-by-week roadmap</h1>
+            <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">8-week transition plan paced at 10 hours per week.</p>
+          </div>
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-light-surface-container-lowest border border-light-outline-variant">
+            <span class="font-mono text-mono-sm text-light-primary tabular-nums" data-design-text-token="mono-sm">25% completed</span>
+            <span class="text-ash-200">|</span>
+            <span class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">Target finish: Jan 2, 2027</span>
+          </div>
+        </header>
+
+        <!-- Timeline Cards -->
+        <section class="relative flex flex-col gap-5 pl-6 md:pl-8 border-l-2 border-light-outline-variant">
+          <!-- Week 1: Completed -->
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="relative bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-6 flex flex-col gap-3">
+            <span class="absolute -left-9 md:-left-11 top-6 w-5 h-5 rounded-full bg-pink-soft border-2 border-light-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-label-sm text-light-primary" aria-hidden="true">check</span>
+            </span>
+            <header class="flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <span class="font-mono text-mono-sm text-light-on-surface-variant tabular-nums" data-design-text-token="mono-sm">Week 1 · Nov 4–10</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-sm">Completed</span>
+              </div>
+              <span class="font-mono text-mono-sm text-light-on-surface-variant tabular-nums" data-design-text-token="mono-sm">10 hrs</span>
+            </header>
+            <h2 class="font-title text-title-lg text-light-on-surface" data-design-text-token="title-lg">Product Tear-Down &amp; User Discovery</h2>
+            <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">
+              Translated marketing research experience into structured PM problem framing and completed 3 teardown memos.
+            </p>
+          </article>
+
+          <!-- Week 2: Completed -->
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="relative bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-6 flex flex-col gap-3">
+            <span class="absolute -left-9 md:-left-11 top-6 w-5 h-5 rounded-full bg-pink-soft border-2 border-light-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-label-sm text-light-primary" aria-hidden="true">check</span>
+            </span>
+            <header class="flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <span class="font-mono text-mono-sm text-light-on-surface-variant tabular-nums" data-design-text-token="mono-sm">Week 2 · Nov 11–17</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-sm">Completed</span>
+              </div>
+              <span class="font-mono text-mono-sm text-light-on-surface-variant tabular-nums" data-design-text-token="mono-sm">10 hrs</span>
+            </header>
+            <h2 class="font-title text-title-lg text-light-on-surface" data-design-text-token="title-lg">SQL Funnel &amp; Retention Analytics</h2>
+            <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">
+              Built D7/D30 cohort queries and mapped North Star activation metrics for B2B SaaS onboarding.
+            </p>
+          </article>
+
+          <!-- Week 3: Current Focus -->
+          <article data-component-id="card-action" data-component-type="card" data-component-variant="action" class="relative bg-light-surface-container-lowest border-2 border-light-primary rounded-lg p-6 flex flex-col gap-4">
+            <span class="absolute -left-9 md:-left-11 top-6 w-5 h-5 rounded-full bg-light-primary border-4 border-pink-soft"></span>
+            <header class="flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <span class="font-mono text-mono-sm text-light-primary tabular-nums" data-design-text-token="mono-sm">Week 3 · Nov 18–24</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-pink-tint text-light-primary font-label text-label-sm">Current Focus</span>
+              </div>
+              <span class="font-mono text-mono-sm text-light-primary tabular-nums" data-design-text-token="mono-sm">6 / 10 hrs logged</span>
+            </header>
+            <h2 class="font-title text-title-lg text-light-on-surface" data-design-text-token="title-lg">Experimentation &amp; Pricing Specs</h2>
+            <p class="font-body text-body-md text-light-on-surface-variant text-pretty" data-design-text-token="body-md">
+              Close the PRD Writing &amp; Pricing Strategy gaps by shipping a complete A/B experiment spec and running a metrics mock drill.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-full bg-pink-tint text-light-primary font-label text-label-sm">Project: Pricing Tier Spec</span>
+              <span class="px-2.5 py-1 rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-sm">Mock: Product Sense</span>
+            </div>
+            <footer class="pt-3 border-t border-light-outline-variant flex items-center justify-between gap-4">
+              <span class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">2 tasks remaining this week</span>
+              <a href="../projects/Projects.html" class="inline-flex items-center justify-center px-4 py-2 rounded-full bg-light-primary text-light-on-primary font-label text-label-md hover:opacity-90 transition-colors duration-state-change">Continue Week 3</a>
+            </footer>
+          </article>
+
+          <!-- Week 4: Upcoming -->
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="relative bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-6 flex flex-col gap-3">
+            <span class="absolute -left-9 md:-left-11 top-6 w-5 h-5 rounded-full bg-light-surface-container-lowest border-2 border-ash-400"></span>
+            <header class="flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <span class="font-mono text-mono-sm text-light-on-surface-variant tabular-nums" data-design-text-token="mono-sm">Week 4 · Nov 25–Dec 1</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-sm">Upcoming</span>
+              </div>
+              <span class="font-mono text-mono-sm text-light-on-surface-variant tabular-nums" data-design-text-token="mono-sm">10 hrs</span>
+            </header>
+            <h2 class="font-title text-title-lg text-light-on-surface" data-design-text-token="title-lg">Technical Architecture &amp; API Trade-offs</h2>
+            <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">
+              Partnering with engineering on latency, webhooks, and scope negotiation; includes a technical trade-off mock interview.
+            </p>
+          </article>
+
+          <!-- Week 5: Upcoming -->
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="relative bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-6 flex flex-col gap-3">
+            <span class="absolute -left-9 md:-left-11 top-6 w-5 h-5 rounded-full bg-light-surface-container-lowest border-2 border-ash-400"></span>
+            <header class="flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <span class="font-mono text-mono-sm text-light-on-surface-variant tabular-nums" data-design-text-token="mono-sm">Week 5 · Dec 2–8</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-sm">Upcoming</span>
+              </div>
+              <span class="font-mono text-mono-sm text-light-on-surface-variant tabular-nums" data-design-text-token="mono-sm">10 hrs</span>
+            </header>
+            <h2 class="font-title text-title-lg text-light-on-surface" data-design-text-token="title-lg">AI Product Design &amp; LLM Evals</h2>
+            <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">
+              Build an LLM evaluation rubric and hallucination guardrail spec to close your highest-priority AI skill gap.
+            </p>
+          </article>
+
+          <!-- Weeks 6-8 Summary Card -->
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="relative bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-6 flex flex-col gap-3">
+            <span class="absolute -left-9 md:-left-11 top-6 w-5 h-5 rounded-full bg-light-surface-container-lowest border-2 border-ash-200"></span>
+            <header class="flex flex-wrap items-center justify-between gap-3">
+              <span class="font-mono text-mono-sm text-light-on-surface-variant tabular-nums" data-design-text-token="mono-sm">Weeks 6–8 · Dec 9–Jan 2</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-sm">Final Sprint</span>
+            </header>
+            <h2 class="font-title text-title-lg text-light-on-surface" data-design-text-token="title-lg">Portfolio Polish, Outreach &amp; Full-Loop Mocks</h2>
+            <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">
+              Publish 3 case studies, tailor resume bullets per JD, and complete 4 timed behavioral + product sense interview loops.
+            </p>
+          </article>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const closeBtn = document.getElementById('mobile-close-btn');
+      const sidebar = document.getElementById('app-sidebar');
+      const backdrop = document.getElementById('sidebar-backdrop');
+      function openMenu() {
+        sidebar.classList.remove('hidden');
+        sidebar.classList.add('flex');
+        backdrop.classList.remove('hidden');
+        if (menuBtn) menuBtn.setAttribute('aria-expanded', 'true');
+      }
+      function closeMenu() {
+        sidebar.classList.add('hidden');
+        sidebar.classList.remove('flex');
+        backdrop.classList.add('hidden');
+        if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+      }
+      if (menuBtn) menuBtn.addEventListener('click', openMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+      if (backdrop) backdrop.addEventListener('click', closeMenu);
+    })();
+  </script>
+
+
+</body></html>

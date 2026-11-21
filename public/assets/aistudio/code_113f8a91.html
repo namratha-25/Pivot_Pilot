@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onboarding — PivotPilot</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'pink-tint': '#FFECF0',
+        'pink-soft': '#FFD9E3',
+        'pink-mid': '#FFB0CA',
+        'ash-50': '#F0F0F5',
+        'ash-100': '#E1E2E7',
+        'ash-200': '#C5C6CB',
+        'ash-400': '#8F9195',
+        'ash-500': '#75777B',
+        'ash-600': '#5C5E62',
+        'ash-900': '#191C1F',
+        'light-primary': '#80264D',
+        'light-on-primary': '#FFFFFF',
+        'light-primary-container': '#FFD9E3',
+        'light-on-primary-container': '#610A35',
+        'light-secondary': '#805160',
+        'light-on-secondary': '#FFFFFF',
+        'light-secondary-container': '#FEC1D4',
+        'light-on-secondary-container': '#4B2432',
+        'light-error': '#BA1A1A',
+        'light-on-error': '#FFFFFF',
+        'light-error-container': '#FFDAD6',
+        'light-on-error-container': '#93000A',
+        'light-background': '#F3F3F8',
+        'light-on-background': '#191C1F',
+        'light-surface': '#F3F3F8',
+        'light-surface-dim': '#E1E2E7',
+        'light-surface-bright': '#FFFFFF',
+        'light-surface-container-lowest': '#FFFFFF',
+        'light-surface-container-low': '#F8F8FB',
+        'light-surface-container': '#EDEEF2',
+        'light-surface-container-high': '#E7E8EC',
+        'light-surface-container-highest': '#E1E2E7',
+        'light-on-surface': '#191C1F',
+        'light-surface-variant': '#E7E8EC',
+        'light-on-surface-variant': '#5C5E62',
+        'light-outline': '#8F9195',
+        'light-outline-variant': '#E1E2E7',
+        'light-inverse-surface': '#2E3134',
+        'light-inverse-on-surface': '#F0F0F5',
+        'light-inverse-primary': '#FFB0CA',
+        'light-shadow': '#191C1F',
+        'light-scrim': '#000000',
+        'dark-primary': '#FFB0CA',
+        'dark-on-primary': '#610A35',
+        'dark-primary-container': '#9E3E65',
+        'dark-on-primary-container': '#FFCEDC',
+        'dark-secondary': '#F2B6C8',
+        'dark-on-secondary': '#4B2432',
+        'dark-secondary-container': '#683C4B',
+        'dark-on-secondary-container': '#E3A8BA',
+        'dark-error': '#FFB4AB',
+        'dark-on-error': '#690005',
+        'dark-error-container': '#93000A',
+        'dark-on-error-container': '#FFDAD6',
+        'dark-background': '#111417',
+        'dark-on-background': '#E1E2E7',
+        'dark-surface': '#111417',
+        'dark-surface-dim': '#111417',
+        'dark-surface-bright': '#37393D',
+        'dark-surface-container-lowest': '#0C0E11',
+        'dark-surface-container-low': '#191C1F',
+        'dark-surface-container': '#1D2023',
+        'dark-surface-container-high': '#282A2E',
+        'dark-surface-container-highest': '#323538',
+        'dark-on-surface': '#E1E2E7',
+        'dark-surface-variant': '#2E3134',
+        'dark-on-surface-variant': '#AAABAF',
+        'dark-outline': '#8F9195',
+        'dark-outline-variant': '#44474B',
+        'dark-inverse-surface': '#E1E2E7',
+        'dark-inverse-on-surface': '#2E3134',
+        'dark-inverse-primary': '#9C3C63',
+        'dark-shadow': '#000000',
+        'dark-scrim': '#000000',
+      },
+      borderRadius: {
+        'sm': '8px',
+        'DEFAULT': '12px',
+        'md': '16px',
+        'lg': '20px',
+        'xl': '24px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '40px',
+        'page-margin': '24px',
+      },
+      fontFamily: {
+        'display': ['"Wix Madefor Display"', 'sans-serif'],
+        'headline': ['"Wix Madefor Display"', 'sans-serif'],
+        'title': ['"Instrument Sans"', 'sans-serif'],
+        'body': ['"Instrument Sans"', 'sans-serif'],
+        'label': ['"Instrument Sans"', 'sans-serif'],
+        'mono': ['"Source Code Pro"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['40px', { lineHeight: '48px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'display-lg-mobile': ['28px', { lineHeight: '34px', letterSpacing: '-0.3px', fontWeight: '700' }],
+        'headline-lg': ['28px', { lineHeight: '36px', letterSpacing: '-0.3px', fontWeight: '600' }],
+        'headline-md': ['22px', { lineHeight: '28px', letterSpacing: '-0.2px', fontWeight: '600' }],
+        'title-lg': ['18px', { lineHeight: '26px', letterSpacing: '-0.1px', fontWeight: '600' }],
+        'title-md': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '500' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.1px', fontWeight: '500' }],
+        'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.2px', fontWeight: '500' }],
+        'mono-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '500' }],
+        'mono-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '240ms',
+        'surface-exit': '160ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;family=Source+Code+Pro:wght@500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>.material-symbols-outlined { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }</style>
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased">
+  <div class="min-h-[1024px] flex flex-col" data-stitch-vh="min-h-[1024px]===min-h-screen">
+    <!-- Onboarding Top Bar -->
+    <header class="bg-light-surface-container-lowest border-b border-light-outline-variant">
+      <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded bg-pink-soft text-light-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-title-lg" style="font-variation-settings: &#39;FILL&#39; 1;" aria-hidden="true">explore</span>
+          </div>
+          <span class="font-headline text-title-lg text-light-on-surface" data-design-text-token="title-lg">PivotPilot</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="font-mono text-mono-sm text-light-on-surface-variant tabular-nums" data-design-text-token="mono-sm">Step 1 of 2</span>
+          <a href="../dashboard/Dashboard.html" class="font-label text-label-md text-light-on-surface-variant hover:text-light-primary transition-colors duration-state-change" data-design-text-token="label-md">Skip to Demo</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Setup Container -->
+    <main class="flex-1 w-full max-w-4xl mx-auto px-6 py-10 flex flex-col gap-8">
+      <section class="flex flex-col gap-2">
+        <span class="inline-flex items-center self-start px-3 py-1 rounded-full bg-pink-tint text-light-primary font-label text-label-sm" data-design-text-token="label-sm">AI Career Pivot Setup</span>
+        <h1 class="font-headline text-display-lg-mobile md:text-display-lg text-light-on-surface text-balance" data-design-text-token="display-lg">Map your transition in two minutes</h1>
+        <p class="font-body text-body-lg text-light-on-surface-variant max-w-prose text-pretty" data-design-text-token="body-lg">
+          Share your background, target role, and weekly bandwidth. PivotPilot benchmarks your skills against real job descriptions to build your custom roadmap.
+        </p>
+      </section>
+
+      <form class="flex flex-col gap-6">
+        <!-- 1. Resume Upload -->
+        <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-6 flex flex-col gap-4">
+          <header class="flex items-center justify-between gap-4">
+            <div class="flex flex-col gap-1">
+              <h2 class="font-title text-title-lg text-light-on-surface" data-design-text-token="title-lg">1. Resume upload</h2>
+              <p class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">PDF or DOCX up to 10 MB. Used to extract verified skill evidence.</p>
+            </div>
+            <span data-component-id="badge-status" data-component-type="badge" data-component-variant="status" role="status" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-pink-tint text-light-primary font-label">
+              <span class="material-symbols-outlined text-label-md" aria-hidden="true">check_circle</span>
+              <span data-design-text-token="label-sm" class="text-label-sm">Parsed</span>
+            </span>
+          </header>
+
+          <div class="rounded-md border border-dashed border-ash-200 bg-light-surface-container-low p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-3.5">
+              <div class="w-11 h-11 rounded bg-pink-soft text-light-primary flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-headline-md" aria-hidden="true">description</span>
+              </div>
+              <div class="flex flex-col gap-0.5">
+                <span class="font-label text-label-lg text-light-on-surface" data-design-text-token="label-lg">Maya_Lin_Resume_2026.pdf</span>
+                <span class="font-mono text-mono-sm text-light-on-surface-variant tabular-nums" data-design-text-token="mono-sm">248 KB · 14 skills detected</span>
+              </div>
+            </div>
+            <button data-component-id="button-tertiary" data-component-type="button" data-component-variant="tertiary" type="button" class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-light-surface-container-lowest border border-light-outline-variant text-light-on-surface font-label hover:bg-light-surface-container transition-colors duration-state-change">
+              <span class="material-symbols-outlined text-title-md" aria-hidden="true">upload_file</span>
+              <span data-design-text-token="label-md" class="text-label-md">Replace File</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 2. Target Role -->
+        <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-6 flex flex-col gap-4">
+          <header class="flex flex-col gap-1">
+            <h2 class="font-title text-title-lg text-light-on-surface" data-design-text-token="title-lg">2. Target role</h2>
+            <p class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">Enter the exact role you are pivoting toward.</p>
+          </header>
+
+          <label data-component-id="input-field-icon" data-component-type="input-field" data-component-variant="with-icon" class="flex flex-col gap-1.5">
+            <span data-design-text-token="label-md" class="font-label text-label-md text-light-on-surface">Role title</span>
+            <div class="relative flex items-center">
+              <span aria-hidden="true" class="material-symbols-outlined text-ash-400 absolute left-3.5 text-title-md pointer-events-none">work_outline</span>
+              <input type="text" value="Product Manager (AI &amp; Growth)" placeholder="e.g., Technical Product Manager" class="w-full rounded bg-light-surface-container-lowest border border-light-outline-variant pl-10 pr-3.5 py-2.5 font-body text-body-md text-light-on-surface placeholder:text-ash-400 focus:border-light-primary focus:ring-1 focus:ring-light-primary">
+            </div>
+          </label>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="font-label text-label-md text-light-on-surface-variant mr-1" data-design-text-token="label-md">Popular pivots:</span>
+            <button type="button" class="px-3 py-1 rounded-full bg-pink-tint text-light-primary font-label text-label-sm border border-pink-mid">Product Manager</button>
+            <button type="button" class="px-3 py-1 rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-sm hover:bg-pink-tint hover:text-light-primary transition-colors duration-state-change">Product Ops</button>
+            <button type="button" class="px-3 py-1 rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-sm hover:bg-pink-tint hover:text-light-primary transition-colors duration-state-change">Growth PM</button>
+            <button type="button" class="px-3 py-1 rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-sm hover:bg-pink-tint hover:text-light-primary transition-colors duration-state-change">AI Solutions Architect</button>
+          </div>
+        </article>
+
+        <!-- 3. Weekly Hours -->
+        <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-6 flex flex-col gap-4">
+          <header class="flex flex-col gap-1">
+            <h2 class="font-title text-title-lg text-light-on-surface" data-design-text-token="title-lg">3. Weekly hours</h2>
+            <p class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">Sets the pacing of your week-by-week roadmap and project deadlines.</p>
+          </header>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-stretch" id="hours-selector">
+            <button type="button" data-hours="5" class="hours-option h-full text-left rounded-md border border-light-outline-variant bg-light-surface-container-low p-4 flex flex-col gap-2 hover:border-pink-mid transition-colors duration-state-change">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-title-md text-light-on-surface tabular-nums" data-design-text-token="title-md">5 hrs / wk</span>
+                <span class="px-2 py-0.5 rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-sm">Light</span>
+              </div>
+              <p class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">12-week steady ramp for busy schedules.</p>
+            </button>
+
+            <button type="button" data-hours="10" aria-pressed="true" class="hours-option h-full text-left rounded-md border-2 border-light-primary bg-pink-tint p-4 flex flex-col gap-2 transition-colors duration-state-change">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-title-md text-light-primary tabular-nums" data-design-text-token="title-md">10 hrs / wk</span>
+                <span class="px-2 py-0.5 rounded-full bg-pink-soft text-light-on-primary-container font-label text-label-sm">Balanced</span>
+              </div>
+              <p class="font-body text-body-sm text-light-on-primary-container" data-design-text-token="body-sm">8-week focused pivot alongside a full-time job.</p>
+            </button>
+
+            <button type="button" data-hours="15" class="hours-option h-full text-left rounded-md border border-light-outline-variant bg-light-surface-container-low p-4 flex flex-col gap-2 hover:border-pink-mid transition-colors duration-state-change">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-title-md text-light-on-surface tabular-nums" data-design-text-token="title-md">15+ hrs / wk</span>
+                <span class="px-2 py-0.5 rounded-full bg-light-surface-container text-light-on-surface-variant font-label text-label-sm">Sprint</span>
+              </div>
+              <p class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">5-week accelerated sprint for active job seekers.</p>
+            </button>
+          </div>
+        </article>
+
+        <!-- 4. Paste Job Descriptions -->
+        <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-6 flex flex-col gap-4">
+          <header class="flex items-center justify-between gap-4">
+            <div class="flex flex-col gap-1">
+              <h2 class="font-title text-title-lg text-light-on-surface" data-design-text-token="title-lg">4. Paste job descriptions</h2>
+              <p class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">Paste 1–3 target JDs so PivotPilot can weight your skill-gap heatmap.</p>
+            </div>
+            <span class="font-mono text-mono-sm text-light-on-surface-variant tabular-nums" data-design-text-token="mono-sm">2 JDs added</span>
+          </header>
+
+          <label class="flex flex-col gap-1.5">
+            <span class="font-label text-label-md text-light-on-surface" data-design-text-token="label-md">Target Job Description #1 — Linear (Product Specialist / PM)</span>
+            <textarea rows="4" class="w-full rounded bg-light-surface-container-lowest border border-light-outline-variant px-3.5 py-2.5 font-body text-body-md text-light-on-surface placeholder:text-ash-400 focus:border-light-primary focus:ring-1 focus:ring-light-primary">Own end-to-end feature discovery, write crisp product specs, partner with engineering on prioritization, and analyze cohort retention using SQL and funnel metrics. Experience running pricing or onboarding experiments is a strong plus.</textarea>
+          </label>
+
+          <div class="flex items-center justify-between gap-4 pt-1">
+            <button type="button" class="inline-flex items-center gap-1.5 font-label text-label-md text-light-primary hover:underline">
+              <span class="material-symbols-outlined text-title-md" aria-hidden="true">add_circle_outline</span>
+              <span data-design-text-token="label-md">Add another job description</span>
+            </button>
+            <span class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">Also tracking: Notion Growth PM</span>
+          </div>
+        </article>
+
+        <!-- Action Footer -->
+        <div class="flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-4 pt-2">
+          <p class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">
+            Estimated readiness baseline will calculate in ~15 seconds.
+          </p>
+          <a href="../dashboard/Dashboard.html" data-component-id="button-with-icon" data-component-type="button" data-component-variant="with-icon" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-light-primary text-light-on-primary font-label hover:opacity-90 transition-colors duration-state-change">
+            <span class="material-symbols-outlined text-title-md" aria-hidden="true">auto_awesome</span>
+            <span data-design-text-token="label-lg" class="text-label-lg">Generate Roadmap</span>
+          </a>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      const options = document.querySelectorAll('.hours-option');
+      options.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          options.forEach(function (item) {
+            item.setAttribute('aria-pressed', 'false');
+            item.className = 'hours-option h-full text-left rounded-md border border-light-outline-variant bg-light-surface-container-low p-4 flex flex-col gap-2 hover:border-pink-mid transition-colors duration-state-change';
+          });
+          btn.setAttribute('aria-pressed', 'true');
+          btn.className = 'hours-option h-full text-left rounded-md border-2 border-light-primary bg-pink-tint p-4 flex flex-col gap-2 transition-colors duration-state-change';
+        });
+      });
+    })();
+  </script>
+
+
+</body></html>
